@@ -30,7 +30,7 @@ jobs:
 
       - name: Prepare Gradle file
         run: |
-          cp app/build.gradle.bak app/build.gradle
+          cp android/app/build.gradle.kts android/app/build.gradle
 
       - name: Detect Version Name
         id: meta
