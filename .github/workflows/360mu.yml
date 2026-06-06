@@ -30,12 +30,12 @@ jobs:
 
       - name: Prepare Gradle file
         run: |
-          cp android/app/build.gradle.kts android/app/build.gradle
+          cp 360mu/android/app/build.gradle.kts 360mu/android/app/build.gradle
 
       - name: Detect Version Name
         id: meta
         run: |
-          VERSION_NAME=$(grep -oP 'versionName\s+"[^"]+"' app/build.gradle | head -n1 | sed 's/versionName\s*"\(.*\)"/\1/')
+          VERSION_NAME=$(grep -oP 'versionName\s+"[^"]+"' 360mu/android/app/build.gradle | head -n1 | sed 's/versionName\s*"\(.*\)"/\1/')
           if [ -z "$VERSION_NAME" ]; then
             VERSION_NAME="unknown"
           fi
@@ -43,7 +43,7 @@ jobs:
           echo "apk_name=360mu-${VERSION_NAME}.apk" >> $GITHUB_OUTPUT
 
       - name: Grant execute permission
-        run: chmod +x android/gradlew
+        run: chmod +x 360mu/android/gradlew
 
       - name: Build Signed APK
         env:
