@@ -43,7 +43,7 @@ jobs:
           echo "apk_name=360mu-${VERSION_NAME}.apk" >> $GITHUB_OUTPUT
 
       - name: Grant execute permission
-        run: chmod +x gradlew
+        run: chmod +x android/gradlew
 
       - name: Build Signed APK
         env:
@@ -67,7 +67,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: 360mu-${{ steps.meta.outputs.version_name }}
-          name: 360mn ${{ steps.meta.outputs.version_name }}
+          name: 360mu ${{ steps.meta.outputs.version_name }}
           files: app/build/outputs/apk/${{ steps.meta.outputs.apk_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
