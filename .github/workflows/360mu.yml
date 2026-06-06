@@ -24,9 +24,9 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Decode Keystore
-        run: |
-          echo "${{ secrets.ANDROID_KEYSTORE_B64 }}" | base64 -d > app/release.jks
+#      - name: Decode Keystore
+#        run: |
+#          echo "${{ secrets.ANDROID_KEYSTORE_B64 }}" | base64 -d > app/release.jks
 
       - name: Prepare Gradle file
         run: |
