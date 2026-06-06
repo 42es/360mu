@@ -40,7 +40,7 @@ jobs:
             VERSION_NAME="unknown"
           fi
           echo "version_name=$VERSION_NAME" >> $GITHUB_OUTPUT
-          echo "apk_name=aX360e-${VERSION_NAME}.apk" >> $GITHUB_OUTPUT
+          echo "apk_name=360mu-${VERSION_NAME}.apk" >> $GITHUB_OUTPUT
 
       - name: Grant execute permission
         run: chmod +x gradlew
@@ -60,14 +60,14 @@ jobs:
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: aX360e-${{ steps.meta.outputs.version_name }}
+          name: 360mu-${{ steps.meta.outputs.version_name }}
           path: app/build/outputs/apk/${{ steps.meta.outputs.apk_name }}
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ax360e-${{ steps.meta.outputs.version_name }}
-          name: aX360e ${{ steps.meta.outputs.version_name }}
+          tag_name: 360mu-${{ steps.meta.outputs.version_name }}
+          name: 360mn ${{ steps.meta.outputs.version_name }}
           files: app/build/outputs/apk/${{ steps.meta.outputs.apk_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
