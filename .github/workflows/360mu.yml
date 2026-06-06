@@ -30,7 +30,7 @@ jobs:
 
       - name: Prepare Gradle file
         run: |
-          cp /360mu/android/app/build.gradle.kts /360mu/android/app/build.gradle
+          cp /360mu/android/app/build.gradle.kts /360mu/android/app/build.gradle.kts
 
       - name: Detect Version Name
         id: meta
