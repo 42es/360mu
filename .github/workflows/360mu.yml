@@ -43,7 +43,7 @@ jobs:
           echo "xenia-upstream: $(git -C xenia-upstream rev-parse HEAD)"
 
       - name: Symlink src/ and third_party/
-        run: bash setup.sh
+        run: bash build.sh
 
       - name: Verify source tree
         run: |
